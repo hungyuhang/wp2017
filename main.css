@@ -1,4 +1,8 @@
-#main {
+#header {
 	padding: 50px 250px;
 	text-align: center;
+}
+
+#body {
+	padding: 50px 250px;
 }
