@@ -12,3 +12,86 @@
 h2 {
 	text-align: center;
 }
+
+
+.container {
+	text-align: center;
+	background-color: LightGreen;
+	height: 500px;
+    width: 500px;
+	margin: 0px auto;
+}
+
+
+#back_card {
+	height: 300px;
+    width: 200px;
+	background-color: LightCyan;
+	margin: 0px auto;
+	
+	animation-name: spin;
+	animation-duration: 5000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear; 
+}
+
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+
+#button_container {
+	height: 110px;
+    width: 340px;
+	background-color: LightSlateGrey;
+	margin: 0px auto;
+	/* padding: 20px; */
+}
+
+
+#button_front {
+	height: 70px;
+    width: 300px;
+	top: 20px;
+	background-color: Lavender;
+	margin: 0px auto;
+	position: relative;
+	z-index: 2;
+	
+	
+}
+
+
+#button_back {
+	height: 70px;
+    width: 300px;
+	bottom: 50px;
+	background-color: LavenderBlush;
+	margin: 0px auto;
+	position: relative;
+	z-index: 1;
+}
+
+
+#button_leftside {
+	background-color: GreenYellow;
+	height: 60px;
+    width: 60px;
+	left: 0px;
+	position: absolute;
+}
+
+
+#button_rightside {
+	background-color: GreenYellow;
+	height: 60px;
+    width: 60px;
+	right: 0px;
+	position: absolute;
+}

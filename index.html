@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="main.css">
 	</head>
 	<body>
@@ -31,5 +32,34 @@
 			<p>National Cheng Kung University</p>
 			
 		</div>
+		<div class="container">
+			<br>
+			<div id="pic1" class="object">
+			</div>
+			<div id="pic2" class="object">
+			</div>
+			<div id="back_card" class="object">
+			</div>
+			<br>
+			<div id="button_container">
+				<div id="button_front">
+					<div id="button_leftside"></div>
+					<div id="button_rightside"></div>
+				</div>
+				<div id="button_back">
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			$("#button_leftside").click(function(){
+				//var front = $("#button_front");
+				//var back = $("#button_back");
+				var front = document.getElementById("button_front");
+				var back = document.getElementById("button_back");
+				front.style.animation = "spin 5000ms infinite";
+			}); 
+		</script>
+		
 	</body>
 </html>
