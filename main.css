@@ -29,10 +29,10 @@ h2 {
 	background-color: LightCyan;
 	margin: 0px auto;
 	
-	animation-name: spin;
+	/*animation-name: spin;
 	animation-duration: 5000ms;
 	animation-iteration-count: infinite;
-	animation-timing-function: linear; 
+	animation-timing-function: linear; */
 }
 
 
@@ -76,6 +76,7 @@ h2 {
 	margin: 0px auto;
 	position: relative;
 	z-index: 1;
+	
 }
 
 

@@ -52,13 +52,57 @@
 		</div>
 		
 		<script>
+			var front_button_status = "right";
+			var btn_angle = 3;
+			document.getElementById("button_front").style.transform = 
+				"rotate(" + btn_angle + "deg)";
+			document.getElementById("button_back").style.transform = 
+				"rotate(-" + btn_angle + "deg)";
+			
+			
 			$("#button_leftside").click(function(){
-				//var front = $("#button_front");
-				//var back = $("#button_back");
 				var front = document.getElementById("button_front");
 				var back = document.getElementById("button_back");
-				front.style.animation = "spin 5000ms infinite";
+				
+				if(front_button_status === "right"){
+					buttonLoop(front, btn_angle, -1*btn_angle, 0, 0);
+					buttonLoop(back, -1*btn_angle, btn_angle, 0, 0);
+					front_button_status = "left";
+				} else {
+					buttonLoop(front, -1*btn_angle, -1*btn_angle, 0, -1);
+					buttonLoop(back, btn_angle, btn_angle, 0, 1);
+				}
 			}); 
+			
+			$("#button_rightside").click(function(){
+				var front = document.getElementById("button_front");
+				var back = document.getElementById("button_back");
+				
+				if(front_button_status === "right"){
+					buttonLoop(front, btn_angle, btn_angle, 0, 1);
+					buttonLoop(back, -1*btn_angle, -1*btn_angle, 0, -1);
+				} else {
+					buttonLoop(front, -1*btn_angle, btn_angle, 0, 0);
+					buttonLoop(back, btn_angle, -1*btn_angle, 0, 0);
+					front_button_status = "right";
+				}
+			}); 
+			
+			function buttonLoop(obj, pos, pos_end, time, speed) {
+				
+				if(time > 17) {
+					obj.style.transform = "rotate(" + pos_end + "deg)";
+					return;
+				}
+				setTimeout(function(){ 
+					obj.style.transform = "rotate(" + pos + "deg)";
+					var pos_old = pos;
+					pos += 0.2*(pos_end - pos) + (0.9 * speed / (time*0.03 + 1));
+					speed = pos - pos_old;
+					time++;
+					buttonLoop(obj, pos, pos_end, time, speed);
+				}, 30);
+			}
 		</script>
 		
 	</body>
