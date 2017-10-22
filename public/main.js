@@ -5,6 +5,35 @@ var pic_number = 3;
 var pic_title = ["Porsche", "Ferrari", "Lamborghini"];
 var pic_primary_color = ["#FFDE59", "#E68E8E", "#B2FFB2"];
 
+function convertName(str) {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      $("#ajax_content").html(this.responseText);
+    }
+  };
+  xmlhttp.open("GET", "convert.php?movie_name=" + str, true);
+  xmlhttp.send();
+}
+
+
+
+$(document).ready(function() {
+  $("#ajax_form").submit(function(event) {
+    convertName($("input[name='MovieName']").val());
+    /*$.ajax({
+      method: "get",
+      url: "./ajax_data",
+      data: {movie_name: $("input[name='MovieName']").val()},    
+      success: function(data) {
+        $("#ajax_content").html(data)
+      }
+    })*/
+    event.preventDefault();
+  })
+})
+
+
 	var current_pic_container = 1;
 	var pic_showing = 0; // leftmost picture (index = 0)
 	document.getElementById("button_front").style.transform = 

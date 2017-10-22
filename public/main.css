@@ -267,3 +267,8 @@ h2 {
 	font-size: 80%;
 	color: grey;
 }
+
+
+#ajax_container {
+  text-align: center;
+}
